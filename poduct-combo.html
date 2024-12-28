@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Image scroll effect */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 400px; /* Adjust the height as needed */
+    }
+    .image-gallery img {
+      max-height: 100%;
+      width: auto;
+      transition: transform 0.3s;
+    }
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Navbar Styling */
+    .navbar {
+     
+      background-color:transparent;
+      width: 100%;
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        text-align: right;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* Custom Animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-black-300 text-gray-800" style="background: black;">
+
+  <!-- Header -->
+  <header class="navbar fixed top-0 left-0 right-0 z-10">
+    <div class="container mx-auto flex items-center justify-between p-4 relative">
+      <a href="/index.html"><img src="./images/Nexole_Logo[1][1].png" alt="" class="h-12 width-auto ml-3" id="logo"></a>
+      
+      <!-- Hamburger Menu for Small Screens -->
+    
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="lg:flex space-x-6 font-semibold text-white">
+          <li class="text-white"><a href="index.html">Home</a></li>
+         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Product Details Section -->
+  <main class="container mx-auto pt-24 px-6">
+    <!-- Product Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <!-- Product Images -->
+      <div class="image-gallery bg-green-400 shadow-md rounded-lg p-4">
+        <img id="product-image" src="./images/1.png" alt="Product Image" class="hover-effect">
+      </div>
+      <!-- Product Info -->
+      <div>
+        <h2 class="text-3xl font-bold text-green-600 mb-4 animate-slide-up" id="product-name">Pack of two</h2>
+        <p class="text-gray-600 mb-2">⭐⭐⭐⭐☆ (4.5 Ratings)</p>
+        <p class="text-xl font-bold text-green-600 mb-4" id ='price'>₹399</p>
+        <div class="product-options">
+          <label for="odour-select" class="block text-sm font-medium text-white">Choose Fregnence:</label>
+          <select id="odour-select" name="odour" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-600 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" >
+            <option style="color: rgb(21, 21, 20);" value="lavender">Pack of two</option>
+            <option style="color: rgb(21, 21, 20);" value="rose">Pack of four</option>
+            </select>
+        </div>
+        <!-- Offers -->
+        <div class="bg-green-400 p-4 rounded-lg mt-5">
+          <p><strong>Offers:</strong></p>
+          <ul class="list-disc list-inside text-gray-800">
+            <li>10% off on credit card payments.</li>
+            <li>Free delivery on first purches</li>
+            <li>One day delivery on order above 999</li>
+          </ul>
+        </div>
+
+        <!-- Delivery Options -->
+        <div class="mb-6">
+          <label for="pincode" class="block text-gray-600 font-semibold mb-2">Check Delivery:</label>
+          <input type="text" id="pincode" placeholder="Enter your pincode"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-green-300 mb-2">
+          <button
+            class="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300">Check</button>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-300"><a href="cart.html" class="width-full" target="_self">Add to Cart</a></button>
+      </div>
+
+    </>
+
+    <!-- Product Description -->
+    <section id="description" class="mt-12 bg-black shadow-md rounded-lg p-6" style="border: 2px solid green; border-radius: 4px;"">
+      <h3 class="text-xl font-bold text-green-600 mb-4" ">Product Description</h3>
+      <p class="text-white leading-relaxed">
+        Say goodbye to smelly shoes with odorx, the revolutionary odor-eliminating shoe inserts. Designed with cutting-edge technology, these ultra-thin, discreet pads absorb odors like a sponge, leaving your shoes—and your feet—feeling fresh all day.
+
+      </p>
+    </section>
+    <section class="mt-12 bg-black shadow-md rounded-lg p-6" style="border: 2px solid green; border-radius: 4px;"">
+      <h3 class="text-xl font-bold text-green-600 mb-4">Key Features</h3>
+      <ul class="list-disc list-inside text-white">
+        <li>Ultra-thin and discrete design</li>
+        <li>Advanced odor-absorbing technology</li>
+        <li>Long-lasting freshness</li>
+        <li>Easy to use and replace</li>
+        <li>Suitable for all types of shoes</li>
+      </ul>
+    </section>
+    <section class="mt-12 bg-black shadow-md rounded-lg p-6"style="border: 2px solid green; border-radius: 4px;"">
+      <h3 class="text-xl font-bold text-green-600 mb-4">How to Use</h3>
+      <ol class="list-decimal list-inside text-white">
+        <li>Peel off the protective backing from the adhesive side</li>
+        <li>Place the patch firmly on the inner sole of your shoe.
+        </li>
+        <li>Enjoy the comfort and freshness with every step!</li>
+       </ol>
+    </section>
+    <!-- FAQs Section -->
+    <section id="faqs" class="mt-12 bg-black shadow-md rounded-lg p-6" style="border: 2px solid green; border-radius: 4px; margin-bottom: 2em;">
+      <h3 class="text-xl font-bold text-green-600 mb-4">FAQs</h3>
+
+      <!-- FAQ Item -->
+      <div>
+        <button
+          class="faq-question w-full text-left font-semibold text-white py-2 border-b border-gray-200 focus:outline-none">Does it have any side effects to skin?</button>
+        <div class="faq-answer pl-4 pt-2 text-sm text-white leading-relaxed hidden">
+         No, it is completely safe and does not have any side effects to skin.
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div>
+        <button
+          class="faq-question w-full text-left font-semibold text-white py-2 border-b border-gray-200 focus:outline-none">Is it eco-friendly?</button>
+        <div class="faq-answer pl-4 pt-2 text-sm text-white leading-relaxed hidden">
+          Yes, it is eco-friendly because it is made with sustainable materials for guilt free freshness.
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div>
+        <button
+          class="faq-question w-full text-left font-semibold text-white py-2 border-b border-gray-200 focus:outline-none">Is it comfortable?</button>
+        <div class="faq-answer pl-4 pt-2 text-sm text-white leading-relaxed hidden">
+         Yes it is very comfortable as it is very thin and light weight, flexible design fits seemlessly into any skin without adding any bulk.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-white py-6 mt-auto">
+    <div class="container mx-auto text-center">
+      &copy; 2024 Your Store. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript for FAQ Accordion and Hamburger Menu -->
+  <script>
+    const faqQuestions = document.querySelectorAll(".faq-question");
+   
+
+    faqQuestions.forEach((question) => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle("hidden");
+
+        faqQuestions.forEach((q) => {
+          if (q !== question) {
+            q.nextElementSibling.classList.add("hidden");
+          }
+        });
+      });
+    });
+    document.getElementById('odour-select').addEventListener('change', function() {
+      var image = document.getElementById('product-image');
+      var prd = document.getElementById('product-name');
+      var price = document.getElementById('price');
+      var selectedOdour = this.value;
+      switch (selectedOdour) {
+        case 'lavender':
+          image.src = './images/1.png';
+          prd.innerHTML = 'pack of 2';
+          price.innerHTML = '₹399';
+          break;
+        case 'rose':
+          image.src = './images/5.png';
+          prd.innerHTML = 'pack of 4';
+          price.innerHTML = '₹799';
+          break;
+        default:
+          image.src = './images/Aquafresh.png';
+          prd.innerHTML = 'OdorX-Aquafresh';
+      }
+    });
+  </script>
+
+</body>
+</html>

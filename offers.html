@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive Offers</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-20 bg-transparent backdrop-blur-md">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <a href="/index.html" class="text-2xl font-bold text-green-600"><img src="./images/Nexole_Logo[1][1].png" alt="" class="h-10"></a>
+
+      <!-- Desktop Menu -->
+      <ul id="desktopMenu" class="md:flex space-x-6 text-white font-semibold">
+        <li><a href="index.html" class="hover:text-green-300">Home</a></li>
+       </ul>
+
+      <!-- Hamburger Menu Button -->
+   </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/30 backdrop-blur-md p-4 space-y-2">
+      <a href="#home" class="block text-black hover:text-green-500">Home</a>
+    </div>
+  </nav>
+
+  <!-- Offers Section -->
+  <main class="container mx-auto pt-20 px-6">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-white mb-6">Exclusive Offers</h1>
+
+    <!-- Exclusive Deals Section -->
+    <section id="exclusive-deals" class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Exclusive Deals for You</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[16px] gap-y-[20px]">
+        
+        <!-- Exclusive Deal Card -->
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-[.3s]">
+          <!-- Deal Image -->
+          <img src="https://source.unsplash.com/400x300/?exclusive,deal" alt="" class="[w-full h-[200px] object-cover]">
+          <!-- Deal Details -->
+          <div class=" p-2 [p-[16px]] relative">
+            <h3 class=" [ text-lg font-bold]">Exclusive Winter Deal</h3>
+            Save up to 70% on winter collections!
+            Region: Global
+            Valid Till: December
+            <!-- Fixed Button Text -->
+            <button
+              class="[mt-[16px]]  text-black w-full bg-white text-purple-[600] py-[8px] rounded-lg hover: bg-gray-[100] transition duration-[.3s]"
+            >Shop Now</button>
+          </div>
+        </div>
+
+        <!-- Repeat Exclusive Deals -->
+        <div class="bg-gradient-to-r from-green-500 to-teal-500 text-black shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-[.3s]">
+          <!-- Deal Image -->
+          <img src="https://source.unsplash.com/400x300/?sale,discounts" alt="" class="[w-full h-[200px] object-cover]">
+          <!-- Deal Details -->
+          <div class="p-2 [p-[16px]] relative">
+            <h3 class="[text-lg font-bold]">Summer Flash Sale</h3>
+            Flat 50% off on summer essentials!
+            Region: North America
+            Valid Till: June
+            <button
+            class="[mt-[16px]]  text-black w-full bg-white text-purple-[600] py-[8px] rounded-lg hover: bg-gray-[100] transition duration-[.3s]"
+            >Shop Now</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-[24px] mt-auto fixed bottom-0 left-0 right-0">
+      <div class="container mx-auto text-center">
+        &copy; 2024 Your Store. All rights reserved.
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+   
+  </script>
+
+</body>
+</html>

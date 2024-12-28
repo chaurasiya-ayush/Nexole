@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-20 backdrop-blur-md">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <a href="/index.html" class="text-2xl font-bold text-blue-600"><img src="./images/Nexole_Logo[1][1].png" alt="" class="h-12 ml-3"></a>
+
+      <!-- Desktop Menu -->
+      <ul id="desktopMenu" class="md:flex space-x-6 text-black font-semibold">
+        <li><a href="index.html" class="hover:text-blue-300 text-black">Home</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+    
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/30 backdrop-blur-md p-4 space-y-2">
+      <a href="#home" class="block text-black hover:text-blue-500">Home</a>
+    </div>
+  </nav>
+
+  <!-- Terms and Conditions Section -->
+  <main class="container mx-auto pt-20 px-6">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Terms and Conditions</h1>
+
+    <!-- Introduction -->
+    <section id="introduction" class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Introduction</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Welcome to Your Store! These terms and conditions outline the rules and regulations for the use of our website.
+        By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use the website if you do not accept all the terms and conditions stated on this page.
+      </p>
+    </section>
+
+    <!-- Intellectual Property -->
+    <section id="intellectual-property" class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Intellectual Property Rights</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Unless otherwise stated, Your Store owns the intellectual property rights for all material on this website. All intellectual property rights are reserved. You may view and/or print pages from this website for your personal use subject to restrictions set in these terms and conditions.
+      </p>
+    </section>
+
+    <!-- User Guidelines -->
+    <section id="user-guidelines" class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">User Guidelines</h2>
+      <ul class="list-disc list-inside text-gray-600 leading-relaxed">
+        <li>You must not republish material from this website.</li>
+        <li>You must not sell, rent, or sub-license material from this website.</li>
+        <li>You must not reproduce, duplicate, or copy material from this website.</li>
+        <li>You must not redistribute content from Your Store unless content is specifically made for redistribution.</li>
+      </ul>
+    </section>
+
+    <!-- Limitation of Liability -->
+    <section id="limitation-liability" class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Limitation of Liability</h2>
+      <p class="text-gray-600 leading-relaxed">
+        In no event shall Your Store, nor any of its officers, directors, employees, or agents, be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract. Your Store shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this Website.
+      </p>
+    </section>
+
+    <!-- Governing Law -->
+    <section id="governing-law" class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Governing Law</h2>
+      <p class="text-gray-600 leading-relaxed">
+        These terms and conditions will be governed by and interpreted in accordance with the laws of [Your Country/State], and you submit to the non-exclusive jurisdiction of the state and federal courts located in [Your Country/State] for the resolution of any disputes.
+      </p>
+    </section>
+
+    <!-- Contact Information -->
+    <section id="contact-info" class="">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Contact Information</h2>
+      <p>If you have any questions about these Terms and Conditions, please contact us:</p>
+      <ul class="list-disc list-inside text-gray-600 leading-relaxed mt-[8px]">
+        <li>Email: support@yourstore.com</li>
+        <li>Phone: +1 (123) 456 7890</li>
+        <li>Address: 123 Main Street, Your City, Your Country</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-[24px] mt-auto">
+    <div class="[container mx-auto] text-center">&copy; [2024] Your Store. All Rights Reserved.</DIV>.
+    </div>
+  </footer>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    const hamburgerButton = document.getElementById("hamburgerButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    hamburgerButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

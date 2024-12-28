@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexol</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="shortcut icon" href="/images/fav icon nexol.ico">
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.3); /* Green shadow */
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html{
+      overflow-x: hidden;
+    }
+    html::-webkit-scrollbar {
+      width: 10px;
+    }
+    html::-webkit-scrollbar-thumb {
+      background-color: #46e55b;
+      border-radius: 10px;
+    }
+    html::-webkit-scrollbar-track {
+      background-color: #333;
+    }
+    
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-black fixed top-0 left-0 right-0 z-20 bg-transparent fixed top-0 left-0 right-0 z-20">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="/index.html" class="text-2xl font-bold text-green-500"><img src="./images/Nexole_Logo[1][1].png" alt="" class="h-11 ml-3 width-auto"></a>
+      <ul class="hidden md:flex space-x-6 text-white font-semibold">
+        <li><a href="product-details.html" class="hover:text-white-300">Products</a></li>
+        <li><a href="#contact" class="hover:text-green-300">Contact</a></li>
+        <li><a href="offers.html" class="hover:text-green-300">Offers</a></li>
+        <li><a href="terms-condition.html" class="hover:text-green-300">Terms & Conditions</a></li>
+      </ul>
+      <button id="menuToggle" class="md:hidden text-green-500 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-black p-4 space-y-2">
+      <a href="product-details.html" class="block text-white hover:text-green-300">Products</a>
+      <a href="#contact" class="block text-white hover:text-green-300">Contact</a>
+      <a href="offers.html" class="block text-white hover:text-green-300">Offers</a>
+      <a href="terms-condition.html" class="block text-white hover:text-green-300">Terms & Conditions</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative flex items-center justify-center min-h-screen pt-[80px] px-6 lg:px-12">
+    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/images/200w.gif')"></div>
+    <div class="relative z-10 flex flex-col lg:flex-row items-center gap-10">
+      <div class="text-center lg:text-center max-w-lg space-y-6" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white-500 drop-shadow-lg" style="font-family: cursive;">
+          Your Shoes deserve better
+        </h1>
+        <p class="text-green-300 text-lg leading-relaxed">
+          Discover cutting-edge solutions designed to simplify your workflow and drive growth.
+        </p>
+        <div class="flex justify-center lg:justify-center gap-4 mt-4">
+          <a href="signup.html" class="px-6 py-3 bg-green-500 text-black font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">Sign-in</a>
+          <a href="signup.html" class="px-6 py-3 bg-black text-green-500 font-semibold rounded-lg border border-green-500 hover:bg-green-100 transition duration-300">Sign-up</a>
+        </div>
+      </div>
+     <div class="ai background-green-600 width-10 h-10 fixed " style="bottom: 100px; right: 10px;">
+      <a href="javascript:window.open('https://nexole-chat-bot.netlify.app/', '_blank', 
+      'width=300,height=200,left=900,top=300')">
+      <img src="/images/ai2.png" alt="" style="height: 120px; width: 120px; ">
+      </a>
+     </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="container mx-auto py-20 px-6 ">
+    <h1 class="text-center text-4xl font-bold text-white-500 mb-10" data-aos="fade-up">Our Products</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-green shadow-md rounded-lg overflow-hidden hover-effect transition duration-300" data-aos="zoom-in">
+       <a href="product-details.html">
+        <img src="./images/Aquafresh[1].png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-bold text-white-500">Aquafresh</h2>
+          <p class="text-green-300">₹249</p>
+        </div>
+       </a>
+       
+       </div>
+       <div class="bg-green shadow-md rounded-lg overflow-hidden hover-effect transition duration-300" data-aos="zoom-in">
+        <a href="poduct-combo.html">
+         <img src="./images/1.png" alt="Product Image" class="w-full h-48 object-cover">
+         <div class="p-4">
+           <h2 class="text-lg font-bold text-white-500">Pack of two</h2>
+           <p class="text-green-300">₹399</p>
+         </div>
+        </a>
+        
+        </div>
+        <div class="bg-green shadow-md rounded-lg overflow-hidden hover-effect transition duration-300" data-aos="zoom-in">
+          <a href="poduct-combo.html">
+           <img src="./images/2.png" alt="Product Image" class="w-full h-48 object-cover">
+           <div class="p-4">
+             <h2 class="text-lg font-bold text-white-500">Pack of four</h2>
+             <p class="text-green-300">₹799</p>
+           </div>
+          </a>
+          
+          </div>
+          <div class="bg-green shadow-md rounded-lg overflow-hidden hover-effect transition duration-300" data-aos="zoom-in">
+            <a href="product-details.html">
+             <img src="./images/4.png" alt="Product Image" class="w-full h-48 object-cover">
+             <div class="p-4">
+               <h2 class="text-lg font-bold text-white-500">Gold Zest</h2>
+               <p class="text-green-300">₹249</p>
+             </div>
+        </a>
+      </div>
+    </div>
+    <div class="relative bg-transparent rounded-xl shadow-lg p-6 max-w-sm lg:max-w-md" data-aos="fade-left">
+      <h2 class="text-xl font-bold text-white-500 mb-2">Why Choose Us?</h2>
+      <ul class="space-y-2 text-white-300">
+        <li>✔️ Innovative and user-friendly tools</li>
+        <li>✔️ Trusted by businesses worldwide</li>
+        <li>✔️ Exceptional customer support</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <img src="/images/odorx layers.png" alt="">
+  </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="min-h-screen flex items-center justify-center bg-green-200 text-black" data-aos="fade-up">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold mb-4">About Us</h1>
+
+      <div style="width: 70vw; margin-top: 50px; ">
+        
+      <p align="justify" >We are an Indian-Based brand that creates adhesive shoe odor-eliminating patches. Our product is designed to be simple and discreet solution for combating shoe odor .Here are some key details about us and our product.
+      
+        <div style="margin-top: 20px; color: green; font-size: 20px;">Founded By: 
+          Rahul Swain, Ruturaj biswal, Pulkit Vyas, Aniket Rana, Ayush Chaurasiya, Aryabattacharjee
+        </div> 
+         
+          
+         
+      </p>
+
+      </div>
+      <p class="text-lg m-5">Learn more about our mission and values.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-500 text-white py-6">
+    <div class="container mx-auto text-center">
+      &copy; 2024 Your Business Name. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+    // Change icon color to green
+    const icons = document.querySelectorAll("svg");
+    icons.forEach(icon => {
+      icon.classList.add("text-green-500");
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+<footer class="bg-gray-800 text-white" id="contact">
+  <div class="container mx-auto py-12 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Contact Details Section -->
+      <div class="flex flex-col justify-center">
+        <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+        <p class="text-gray-300 mb-2">Phone :  <a href="tel:+1234567890" class="text-green-400 hover:underline"> +1 234 567 890</a></p>
+        <p class="text-gray-300 mb-2">Email :  <a href="mailto:info@example.com" class="text-green-400 hover:underline"> nexole@gmail.com</a></p>
+        
+        <p class="text-gray-300">Working Hours :&nbsp;<span class="text-green-400"> Mon - Fri, 9:00 AM - 5:00 PM</span></p>
+      </div>
+
+      <!-- Contact Form Section -->
+      <div class="bg-gray-700 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold mb-5"> Contact us </h2>
+        <form>
+          <!-- Name Input -->
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" 
+                   class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+
+          <!-- Email Input -->
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" 
+                   class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+
+          <!-- Message Input -->
+          <div class="mb-4">
+            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message"
+                      class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full px-6 py-3 bg-green-500 text-white font-semibold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+      <p class="text-gray-400">&copy; 2024 Nexol. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</html>

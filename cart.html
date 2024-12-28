@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom theme toggling */
+        :root {
+            --color-bg: white;
+            --color-text: black;
+            --color-primary: #22c55e;
+        }
+
+        .dark {
+            --color-bg: #1f2937;
+            --color-text: white;
+            --color-primary: #16a34a;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .primary-btn {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+        }
+        #nav{
+          display: flex;
+          justify-content: space-between;
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class=" w-100 flex justify-between items-center bg-gray-100 dark:bg-gray-800 p-4">
+        <div id="nav" class=" width-full flex justify-betwen items-center space-x-4">
+            <img src="/images/Nexole_Logo[1][1].png" alt="Logo" class="h-8">
+            <a href="/index.html" class="text-lg font-semibold text-gray-700 dark:text-gray-200">Home</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="flex justify-between items-center p-4">
+        <h1 class="text-lg font-bold">Your Cart</h1>
+        <button id="themeToggle" class="primary-btn px-4 py-2 rounded">Toggle Theme</button>
+    </header>
+
+    <!-- Cart Items Section -->
+    <main class="container mx-auto p-4">
+        <div id="cartItems" class="space-y-4">
+            <!-- Cart item template -->
+            <div class="flex items-center justify-between border-b pb-2">
+                <div>
+                    <h2 class="text-lg font-semibold">Aquafresh</h2>
+                    <p class="text-sm text-gray-500">Description of the item</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="number" value="1" min="1" class="w-12 border rounded p-1 text-center" />
+                    <p class="font-semibold"> &#8377;249.00</p>
+                    <button class="text-red-500 hover:underline remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+            <div class="flex items-center justify-between border-b pb-2">
+                <div>
+                    <h2 class="text-lg font-semibold">Velvet air</h2>
+                    <p class="text-sm text-gray-500">Description of the item</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="number" value="1" min="1" class="w-12 border rounded p-1 text-center" />
+                    <p class="font-semibold">&#8377; 249.00</p>
+                    <button class="text-red-500 hover:underline remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+            <div class="flex items-center justify-between border-b pb-2">
+                <div>
+                    <h2 class="text-lg font-semibold">Ivory drift</h2>
+                    <p class="text-sm text-gray-500">Description of the item</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="number" value="1" min="1" class="w-12 border rounded p-1 text-center" />
+                    <p class="font-semibold">&#8377;249.00</p>
+                    <button class="text-red-500 hover:underline remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+            <div class="flex items-center justify-between border-b pb-2">
+                <div>
+                    <h2 class="text-lg font-semibold">Golden zest</h2>
+                    <p class="text-sm text-gray-500">Description of the item</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="number" value="1" min="1" class="w-12 border rounded p-1 text-center" />
+                    <p class="font-semibold">&#8377; 249.00</p>
+                    <button class="text-red-500 hover:underline remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Section -->
+        <div class="mt-8">
+            <div class="flex justify-between text-lg font-bold">
+                <p>Total</p>
+                <p id="totalPrice">$10.00</p>
+            </div>
+            <button class="primary-btn mt-4 w-full py-2 rounded text-lg"><a href="/Thankyou_page.html">Checkout</a></button>
+        </div>
+    </main>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        // Cart functionality
+        const cartItems = document.getElementById('cartItems');
+        const totalPriceEl = document.getElementById('totalPrice');
+
+        function updateTotal() {
+            let total = 0;
+            cartItems.querySelectorAll('.flex').forEach(item => {
+                const quantity = item.querySelector('input').value;
+                const price = parseFloat(item.querySelector('p.font-semibold').textContent.replace('$', ''));
+                total += quantity * price;
+            });
+            totalPriceEl.textContent = $${total.toFixed(2)};
+        }
+
+        // Remove item functionality
+        cartItems.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-btn')) {
+                e.target.closest('.flex').remove();
+                updateTotal();
+            }
+        });
+
+        // Update total on quantity change
+        cartItems.addEventListener('input', (e) => {
+            if (e.target.type === 'number') {
+                updateTotal();
+            }
+        });
+    </script>
+</body>
+</html>

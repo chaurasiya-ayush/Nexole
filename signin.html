@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Sign Up</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tab animation */
+    .tab-active {
+      border-bottom: 2px solid #2563eb; /* Blue underline */
+      color: #2563eb; /* Blue text */
+    }
+    #form{
+      background-color: rgba(13, 13, 13, 0.2)
+    }
+    #signInTab{
+      color: green;
+      border-bottom: 2px solid green;
+    }
+    #signUpTab{
+      color: green;
+    }
+  </style>
+</head>
+<body class="bg-black  min-h-screen flex items-center justify-center">
+
+  <!-- Sign In / Sign Up Container -->
+  <div id="form" class=" shadow-lg rounded-lg p-8 max-w-md w-full">
+    <!-- Tabs -->
+    <div class="flex justify-center space-x-8 mb-6">
+      <button id="signInTab" class="tab-activedext-lg font-semibold cursor-pointer"><a href="/signin.html">Sign In</a></button>
+      <button id="signUpTab" class="text-lg font-semibold cursor-pointer">Sign Up</button>
+    </div>
+
+    <!-- Forms -->
+    <div id="signInForm" class="">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Welcome Back!</h2>
+      <!-- Social Login -->
+      <div class="flex justify-center space-x-4 mb-6">
+        <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
+          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" class="w-6 h-6">
+        </button>
+        <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
+          <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" class="w-6 h-6">
+        </button>
+      </div>
+      <p class="text-center text-sm text-gray-500 mb-4">or sign in with your email</p>
+
+      <!-- Email and Password Fields -->
+      <form action="#" method="POST">
+        <input type="email" placeholder="Email" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
+        <input type="password" placeholder="Password" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"><a href="/index.html">Sign In</a></button>
+      </form>
+
+      <!-- Forgot Password -->
+      <p class="text-center text-sm text-gray-500 mt-4">Forgot your password? 
+        <a href="#" class="text-blue-600 hover:underline">Reset it here</a>.
+      </p>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="signUpForm" class="hidden">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Create an Account</h2>
+      <!-- Social Signup -->
+      <div class="flex justify-center space-x-4 mb-6">
+        <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
+          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" class="w-6 h-6">
+        </button>
+        <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
+          <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" class="w-6 h-6">
+        </button>
+      </div>
+      <p class="text-center text-sm text-gray-500 mb-4">or sign up with your email</p>
+
+      <!-- Name, Email, Password Fields -->
+      <form action="#" method="POST">
+        <input type="text" placeholder="Full Name" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
+        <input type="email" placeholder="Email" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
+        <input type="password" placeholder="Password" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue:300 mb:4">
+        <button type:submit"
+          class:"w-full bg-blue:600 text:white py:3 rounded-lg hover:bg-blue:700 transition duration:300">Sign-Up</BUTTON.
+---

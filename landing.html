@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexole - Fresh Steps Forward</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link rel="shortcut icon" href="/images/fav icon nexol.ico">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 40%; /* Adjusted upwards */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background:  #118b50;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .button {
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background:  #118b50;
+            border-radius: 25px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 2rem; /* Added margin to move it downward */
+        }
+
+        .hero-content .button:hover {
+            transform: scale(1.1);
+            background-color: #0078c2;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Starry Space Effect */
+        .box {
+            --clr-shadow__border: #d9a1ff;
+            --clr-text: #F6F4EB;
+            --clr-space: #120e1e;
+            --clr-space-gr: #271950;
+            --clr-star: #E9F8F9;
+            --size: 3rem;
+            position: relative;
+            outline: 1px solid var(--clr-shadow__border);
+            margin-top: 3rem; /* Move box below hero content */
+        }
+
+        .button {
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 0.2rem;
+            background: transparent;
+            padding: calc(var(--size) / 3) var(--size);
+            border: none;
+            cursor: pointer;
+            color: var(--clr-text);
+            text-shadow: 2px 0px var(--clr-shadow_border), 0px 2px var(--clr-shadow_border),
+            -2px 0px var(--clr-shadow_border), 0px -2px var(--clr-shadow_border);
+        }
+
+        .space {
+            width: 100%;
+            height: 100%;
+            bottom: 0%;
+            gap: 1.5rem;
+            transition: 0.5s ease-in-out;
+            z-index: -1;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            display: flex;
+            background: linear-gradient( 160deg, var(--clr-space), var(--clr-space-gr));
+        }
+
+        .box:hover .space {
+            opacity: 1;
+        }
+
+        .star {
+            height: 4rem;
+            width: 0.3rem;
+            transition: 0.5s;
+            border-radius: 50px;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            position: relative;
+            background-color: var(--clr-star);
+            animation: space-animation calc(0.1s * var(--i)) linear infinite;
+        }
+
+        @keyframes space-animation {
+            0% {
+                transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
+            }
+
+            100% {
+                transform: rotate(-30deg) translateY(calc(52% * var(--i)));
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Canvas for 3D Background -->
+    <canvas id="threejs-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Fresh Steps Forward</h1>
+            <p>Experience unmatched freshness with Nexole Odor Control Patches.</p>
+            <br>
+            <a href="index.html" target="_self" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Starry Box -->
+    <div class="box">
+        <button class="button">SPACE</button>
+        <div class="space">
+            <span style="--i: 31" class="star"></span>
+            <span style="--i: 12" class="star"></span>
+            <span style="--i: 57" class="star"></span>
+            <span style="--i: 93" class="star"></span>
+            <span style="--i: 23" class="star"></span>
+            <span style="--i: 70" class="star"></span>
+            <span style="--i: 6" class="star"></span>
+        </div>
+    </div>
+
+    <script>
+        // Three.js Scene Setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("threejs-canvas"), antialias: true });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        // Particle System
+        const particleCount = 1000;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesMaterial = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.1,
+        });
+
+        const positions = [];
+        for (let i = 0; i < particleCount; i++) {
+            positions.push((Math.random() - 0.5) * 50); // X
+            positions.push((Math.random() - 0.5) * 50); // Y
+            positions.push((Math.random() - 0.5) * 50); // Z
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particleSystem);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        // Camera Position
+        camera.position.z = 10;
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            particleSystem.rotation.y += 0.002;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // GSAP Animations
+        gsap.from(".hero-content h1", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+        gsap.from(".hero-content p", { opacity: 0, y: 30, duration: 1, delay: 0.5, ease: "power2.out" });
+        gsap.from(".hero-content .button", { opacity: 0, scale: 0.8, duration: 1, delay: 1, ease: "elastic.out(1, 0.3)" });
+
+        // Responsive Resizing
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
