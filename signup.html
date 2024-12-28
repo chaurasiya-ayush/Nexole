@@ -6,34 +6,39 @@
   <title>Sign Up</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    form input{
+      background-color: black;
+    }
+  </style>
 </head>
 <body class="bg-black min-h-screen flex items-center justify-center">
 
   <!-- Sign Up Container -->
-  <div class="bg-black-500 shadow-lg rounded-lg p-8 max-w-md w-full">
+  <div class=" border bi-border-all bg-black-500 shadow-lg rounded-lg p-8 max-w-md w-full">
     <!-- Header -->
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Create an Account</h2>
+    <h2 class="text-3xl font-bold text-white mb-6 text-center">Create an Account</h2>
 
     <!-- Social Signup -->
-    <div class="flex justify-center space-x-4 mb-6">
+    <div class="  flex justify-center space-x-4 mb-6">
       <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
         <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" class="w-6 h-6">
       </button>
-      <button class="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
+      <button class=" bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition">
         <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" class="w-6 h-6">
       </button>
     </div>
-    <p class="text-center text-sm text-gray-500 mb-4">or sign up with your email</p>
+    <p class="text-center text-sm text-white mb-4">or sign up with your email</p>
 
     <!-- Sign Up Form -->
-    <form action="#" method="POST">
+    <form action="#" method="POST" >
       <!-- Full Name -->
       <input type="text" placeholder="Full Name" required
         class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
 
       <!-- Email -->
       <input type="email" placeholder="Email" required
-        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
+        class=" w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 mb-4">
 
       <!-- Password -->
       <input type="password" placeholder="Password" required
@@ -45,12 +50,12 @@
 
       <!-- Submit Button -->
       <button type="submit"
-        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"><a href="/index.html">Sign Up</a></button>
+        class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"><a href="index1.html">Sign Up</a></button>
     </form>
 
     <!-- Already Have an Account -->
-    <p class="text-center text-sm text-gray-500 mt-6">Already have an account? 
-      <a href="#" class="text-blue-600 hover:underline">Sign In</a>.
+    <p class="text-center text-sm text-white mt-6">Already have an account? 
+      <a href="/web-project/signin.html" class="text-green-600 hover:underline">Sign In</a>.
     </p>
   </div>
 
